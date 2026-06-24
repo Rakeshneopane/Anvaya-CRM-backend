@@ -1,18 +1,17 @@
-# Anvaya CRM – Backend API
+# CRM Backend API
 
-This repository contains the **backend API** for the **Anvaya CRM application**.  
-It is built using **Node.js, Express, and MongoDB**, and provides REST APIs for managing CRM-related resources such as **leads, tags, agents, and reports**.
+This repository contains the **backend service** for a **Customer Relationship Management (CRM) application**.  
+It exposes secure RESTful APIs to handle users leads, and core business logic.
+
+The backend is designed with **scalability, security, and clean architecture** in mind.
 
 ---
 
 ## 🚀 Features
 
-- RESTful API architecture
-- MongoDB database integration using Mongoose
-- Modular route-based structure
-- Environment variable configuration
-- CORS enabled for cross-origin requests
-- Scalable and maintainable codebase
+- User management
+- Customer & lead management (CRUD)
+- Modular & scalable project structure
 
 ---
 
@@ -22,59 +21,31 @@ It is built using **Node.js, Express, and MongoDB**, and provides REST APIs for 
 - **Framework:** Express.js  
 - **Database:** MongoDB  
 - **ODM:** Mongoose  
+- **Security:** CORS  
 - **Validation:** Joi  
-- **Middleware:** CORS  
 - **Environment Management:** dotenv  
 
 ---
 
-## ⚙️ Environment Variables
 
-Create a `.env` file in the root directory and add:
-
-```env
-PORT=3000
-MONGO=your_mongodb_connection_string
-```
 ---
-## Getting Started
 
-**Clone the repository**
+## ▶️ Getting Started
 
-``` 
-git clone https://github.com/Rakeshneopane/CRM-backend.git 
-```
+### 1️⃣ Clone the repository
 
-**Install Dependency**
-
-```
-npm install
+```bash
+git clone https://github.com/your-username/crm-backend.git
+cd crm-backend
+npm install // install dependecies
+npm run dev // Start the server
 ```
 
-**Run the server**
-```
-npm run dev
-```
+---
+ 
+The server will start on:
+    http://localhost:5000 make sure you initialise port to "5000"
 
-**API available at**
-```
-http://localhost:3000
-```
+---
 
 ## API
-
-**API base url**
-```
-/api
-```
-Example:
-```
-/api/tags
-/api/leads
-/api/agents
-/api/reports
-```
-**Verify Server**
-
-GET / <br>
-Response : Anvaya CRM API is working
