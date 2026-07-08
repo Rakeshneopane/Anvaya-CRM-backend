@@ -13,6 +13,9 @@ const { ClerkExpressRequireAuth } = require('@clerk/clerk-sdk-node');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
+
 app.use(cors({
     origin: process.env.FRONTEND_URL,
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -33,6 +36,13 @@ app.use("/api", ClerkExpressRequireAuth(), tagRoutes);
 app.use("/api", ClerkExpressRequireAuth(), leadRoutes);
 app.use("/api", ClerkExpressRequireAuth(), agentRoutes);
 app.use("/api", ClerkExpressRequireAuth(), reportRoutes);
+
+
+app.use((err, req, res, next) => {
+  console.error("Error caught:", err.message, err.status || err.statusCode);
+  const status = err.status || err.statusCode || 500;
+  res.status(status).json({ error: err.message || "Internal server error" });
+});
 
 
 // app.listen(PORT, ()=>{
